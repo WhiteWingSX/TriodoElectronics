@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 
+body {
+    background-color: #fafafa;
+}
+
+.card {
+    background-color: #fdfdfd;
+}
+
 .FontLogo {
     font-family: "Orbitron", serif;
     font-optical-sizing: auto;
@@ -10,8 +18,8 @@
 
 .shoppingCountContainer {
     background-color: #dfdfdf;
-    display: flex; /* Flexbox para alinear los elementos hijos */
-    align-items: center; /* Centrado vertical */
+    display: flex;
+    align-items: center;
 }
 
 .countItems {
@@ -27,4 +35,7 @@
     font-weight: bold;
 }
 
+.active {
+    color: #fff;
+}
 
