@@ -1,6 +1,7 @@
 import { useState,useEffect } from "react";
 import { useParams } from "react-router";
 import { ItemDetail } from "./ItemDetail.jsx";
+import { getProduct } from "../firebase/database.js";
 
 
 export const ItemDetailContainer = () => {
@@ -9,9 +10,7 @@ export const ItemDetailContainer = () => {
     const {id} = useParams()
 
     useEffect(() => {
-        fetch(`https://fakestoreapi.com/products/${id}`)
-            .then(res=>res.json())
-            .then(res => setDetail(res))
+            getProduct(id).then(res => setDetail(res))
     }, [id]);
 
     return (

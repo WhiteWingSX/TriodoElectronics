@@ -1,6 +1,7 @@
 import { useState, useEffect} from "react";
 import { ItemList } from "./ItemList";
 import { useParams } from "react-router";
+import { getProductByCategory, getProducts } from "../firebase/database.js";
 
 export const ItemListContainer = () => {
 
@@ -8,12 +9,12 @@ export const ItemListContainer = () => {
     const {id} = useParams()
 
     useEffect(() => {
-        const allProducts = 'https://fakestoreapi.com/products'
-        const oneCategory = `https://fakestoreapi.com/products/category/${id}`
-
-            fetch(id ? oneCategory : allProducts)
-                .then(res=>res.json())
-                .then(res => setItems(res))
+        if (id) {
+            console.log(id)
+            getProductByCategory(id).then(res => setItems(res));
+        } else {
+            getProducts().then(res => setItems(res));
+        }
     }, [id]);
 
     return (
