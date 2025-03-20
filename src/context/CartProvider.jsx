@@ -26,10 +26,12 @@ export const CartProvider = ({children}) => {
         return result
     }
 
+    // eliminar producto de la lista
     const deleteItem = (id) => {
         setCart(cart.filter(product => product.id !== id));
     }
 
+    // eliminar lista
     const deleteAllItems = () => {
         setCart([]);
     }

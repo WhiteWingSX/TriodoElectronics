@@ -56,9 +56,8 @@ export const CheckoutForm = () => {
                 <label htmlFor="phone" className="form-label">numero telefonico</label>
                 <input type="text" className="form-control" id="phone" placeholder="+56912345678" required/>
             </div>
-            <div className="mb-3 form-check">
-                <input type="checkbox" className="form-check-input" id="Check1"/>
-                <label className="form-check-label" htmlFor="Check1" aria-required>Aceptas los terminos de condiciones y servicios</label>
+            <div className="mb-3">
+                <label>Al aceptar concuerdas con los terminos de condiciones y servicios</label>
             </div>
             <button type="submit" className="btn btn-success">¡Completa tu compra!</button>
         </form>

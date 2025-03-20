@@ -7,6 +7,7 @@ export const CartItem = ({prod}) => {
 
     const deleteProduct = () => {
         deleteItem(prod.id);
+    }
 
     return (
         <li className="list-group-item" key={prod.id}>
