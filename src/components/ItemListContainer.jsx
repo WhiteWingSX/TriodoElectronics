@@ -10,7 +10,6 @@ export const ItemListContainer = () => {
 
     useEffect(() => {
         if (id) {
-            console.log(id)
             getProductByCategory(id).then(res => setItems(res));
         } else {
             getProducts().then(res => setItems(res));

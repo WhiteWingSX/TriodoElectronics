@@ -19,11 +19,9 @@ electrónicos como diodos LED, resistencias, transistores, y otros productos rel
 
 * Listado de productos con descripciones y precios.
 
-* Barra de búsqueda y filtrado de productos.
+* Filtrado de productos.
 
 * Carrito de compras con funcionalidad de agregar y eliminar productos.
-
-* Sistema de autenticación de usuarios.
 
 * Proceso de checkout para la finalización de la compra.
 

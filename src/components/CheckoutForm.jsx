@@ -1,16 +1,39 @@
-
+import {useContext} from "react";
+import { cartContext} from "../context/cartContext.js";
+import {serverTimestamp} from 'firebase/firestore'
+import { createOrder } from "../firebase/database.js";
+import MySwal from "sweetalert2";
+import {useNavigate} from "react-router";
 
 export const CheckoutForm = () => {
 
-    const submitForm = (e) => {
-        e.preventDefault()
-    }
+    const {cart, getTotalPrice, deleteAllItems} = useContext(cartContext)
+    const navigate = useNavigate();
 
-    const order = {
-        items: [],
-        user: {},
-        time: null,
-        total: 124124
+    const submitForm = async(e) => {
+        e.preventDefault()
+
+        const form = e.target
+        const email = form.email.value;
+        const name = form.name.value;
+        const phone = form.phone.value
+
+        const order = {
+            items: cart,
+            user: {name, email, phone},
+            time: serverTimestamp(),
+            total: getTotalPrice()
+        }
+
+        const id = await createOrder(order)
+
+        MySwal.fire({
+            title: "¡Tu compra se completo con exito!",
+            text: `El ID de tu compra es: ${id}`,
+        }).then(() => {
+            deleteAllItems();
+            navigate("/");
+        })
     }
 
     return (

@@ -1,7 +1,7 @@
 import logo from '../assets/img/Logo/TriodoLogo.png';
 import '../style.css'
 import { CartWidget } from "./CartWidget.jsx";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 
 export const Navbar = () => {
 
@@ -29,16 +29,18 @@ export const Navbar = () => {
                     <div className="navbarStyle justify-content-end collapse navbar-collapse pe-5"
                          id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                            <Link className="nav-NavLink" aria-current="page" to="/category/resistor">
-                                Resistores </Link>
+                            <NavLink
+                                className="nav-link" aria-current="page" to="/category/resistor">
+                                Resistores
+                            </NavLink>
                         </div>
                         <div className="navbar-nav">
-                            <Link className="nav-NavLink" aria-current="page" to="/category/capacitor">
-                                Capacitores </Link>
+                            <NavLink className="nav-link" aria-current="page" to="/category/capacitor">
+                                Capacitores </NavLink>
                         </div>
                         <div className="navbar-nav">
-                            <Link className="nav-NavLink" aria-current="page" to="/category/diodos">
-                                Diodos </Link>
+                            <NavLink className="nav-link" aria-current="page" to="/category/diodos">
+                                Diodos </NavLink>
                         </div>
                     </div>
                 </div>

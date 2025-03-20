@@ -35,7 +35,9 @@ body {
     font-weight: bold;
 }
 
-.active {
-    color: #fff;
+
+/*NavLink style*/
+a.active {
+    text-decoration: underline;
 }
 
